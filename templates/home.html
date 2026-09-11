@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Face Recognition Attendance System</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Material Icons -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            min-height: 100vh;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 75% 30%,
+                    rgba(45, 80, 180, 0.18),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(90, 50, 170, 0.12),
+                    transparent 30%
+                ),
+
+                #050609;
+
+            overflow-x: hidden;
+        }
+
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: -5;
+        }
+
+
+
+        /* =====================================================
+           BACKGROUND GRID
+        ===================================================== */
+
+        .network {
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.25;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+
+            mask-image:
+
+                radial-gradient(
+                    ellipse at center,
+                    black 15%,
+                    transparent 75%
+                );
+        }
+
+
+
+        /* =====================================================
+           BLUE GLOW
+        ===================================================== */
+
+        .background-glow {
+
+            position: absolute;
+
+            width: 700px;
+            height: 700px;
+
+            right: 0;
+
+            top: 100px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(40,100,230,0.25),
+                    rgba(40,70,170,0.10) 40%,
+                    transparent 70%
+                );
+
+            filter: blur(35px);
+
+            animation:
+
+                backgroundGlow
+                7s
+                ease-in-out
+                infinite
+                alternate;
+        }
+
+
+        @keyframes backgroundGlow {
+
+            from {
+
+                transform:
+                    translateY(-20px)
+                    scale(0.95);
+            }
+
+            to {
+
+                transform:
+                    translateY(25px)
+                    scale(1.05);
+            }
+
+        }
+
+
+
+        /* =====================================================
+           FLOATING PARTICLES
+        ===================================================== */
+
+        .dot {
+
+            position: absolute;
+
+            width: 4px;
+
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: #6ea8ff;
+
+            box-shadow:
+
+                0 0 12px
+                rgba(80,140,255,0.9);
+
+            animation:
+
+                floatingDot
+                6s
+                ease-in-out
+                infinite;
+        }
+
+
+        .dot-1 {
+
+            left: 16%;
+            top: 25%;
+        }
+
+
+        .dot-2 {
+
+            left: 74%;
+            top: 20%;
+
+            animation-delay: 1s;
+        }
+
+
+        .dot-3 {
+
+            left: 86%;
+            top: 62%;
+
+            animation-delay: 2s;
+        }
+
+
+        .dot-4 {
+
+            left: 52%;
+            top: 80%;
+
+            animation-delay: 3s;
+        }
+
+
+        .dot-5 {
+
+            left: 27%;
+            top: 72%;
+
+            animation-delay: 4s;
+        }
+
+
+        @keyframes floatingDot {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: 0.35;
+            }
+
+            50% {
+
+                transform:
+                    translateY(-20px);
+
+                opacity: 1;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           ROTATING CIRCLE CONTAINER
+
+           THIS REPLACES THE DIAMOND
+        ===================================================== */
+
+        .crystal-container {
+
+            position: absolute;
+
+            right: 7%;
+
+            top: 155px;
+
+            width: 420px;
+
+            height: 420px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            perspective: 1000px;
+
+            z-index: -1;
+        }
+
+
+
+        /* =====================================================
+           ROTATING CIRCLE GLOW
+        ===================================================== */
+
+        .glow {
+
+            position: absolute;
+
+            width: 320px;
+
+            height: 320px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(55, 120, 255, 0.35),
+                    rgba(55, 90, 255, 0.12) 45%,
+                    transparent 70%
+                );
+
+            filter: blur(25px);
+
+            animation:
+
+                glow
+                3s
+                ease-in-out
+                infinite
+                alternate;
+        }
+
+
+        @keyframes glow {
+
+            from {
+
+                transform:
+                    scale(0.9);
+
+                opacity: 0.6;
+            }
+
+            to {
+
+                transform:
+                    scale(1.1);
+
+                opacity: 1;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           OUTER RING
+        ===================================================== */
+
+        .ring {
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            border:
+
+                2px solid
+                rgba(100, 150, 255, 0.55);
+
+            box-shadow:
+
+                0 0 15px
+                rgba(60, 120, 255, 0.5),
+
+                inset 0 0 15px
+                rgba(60, 120, 255, 0.25);
+
+            animation:
+
+                rotate
+                8s
+                linear
+                infinite;
+        }
+
+
+
+        /* =====================================================
+           SECOND RING
+        ===================================================== */
+
+        .ring-2 {
+
+            width: 230px;
+
+            height: 230px;
+
+            border:
+
+                1px solid
+                rgba(180, 200, 255, 0.45);
+
+            animation:
+
+                rotateReverse
+                6s
+                linear
+                infinite;
+        }
+
+
+
+        /* =====================================================
+           THIRD RING
+        ===================================================== */
+
+        .ring-3 {
+
+            width: 330px;
+
+            height: 330px;
+
+            border:
+
+                1px dashed
+                rgba(80, 130, 255, 0.35);
+
+            animation:
+
+                rotate
+                15s
+                linear
+                infinite;
+        }
+
+
+
+        /* =====================================================
+           RING ROTATION
+        ===================================================== */
+
+        @keyframes rotate {
+
+            from {
+
+                transform:
+                    rotate(0deg);
+            }
+
+            to {
+
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        @keyframes rotateReverse {
+
+            from {
+
+                transform:
+                    rotate(360deg);
+            }
+
+            to {
+
+                transform:
+                    rotate(0deg);
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CENTER CIRCLE
+        ===================================================== */
+
+        .core {
+
+            width: 105px;
+
+            height: 105px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 35% 30%,
+                    #dce7ff,
+                    #6f91ff 30%,
+                    #263b8e 60%,
+                    #080d24 100%
+                );
+
+            box-shadow:
+
+                0 0 25px
+                rgba(70, 130, 255, 0.7),
+
+                0 0 70px
+                rgba(50, 100, 255, 0.3);
+
+            z-index: 10;
+
+            animation:
+
+                corePulse
+                3s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes corePulse {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    scale(1.08);
+            }
+
+        }
+
+
+
+        /* =====================================================
+           ROTATING ORBIT DOT
+        ===================================================== */
+
+        .orbit {
+
+            position: absolute;
+
+            width: 360px;
+
+            height: 360px;
+
+            border-radius: 50%;
+
+            animation:
+
+                rotate
+                5s
+                linear
+                infinite;
+        }
+
+
+        .orbit-dot {
+
+            position: absolute;
+
+            top: -4px;
+
+            left: 50%;
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow:
+
+                0 0 10px #6ea8ff,
+
+                0 0 25px #367dff;
+        }
+
+
+
+        /* =====================================================
+           SMALL ORBIT DOT
+        ===================================================== */
+
+        .orbit-2 {
+
+            width: 250px;
+
+            height: 250px;
+
+            animation:
+
+                rotateReverse
+                4s
+                linear
+                infinite;
+        }
+
+
+        .orbit-2 .orbit-dot {
+
+            width: 5px;
+
+            height: 5px;
+
+            background: #8db4ff;
+        }
+
+
+
+        /* =====================================================
+           ARC
+        ===================================================== */
+
+        .arc {
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            border:
+
+                3px solid transparent;
+
+            border-top-color:
+
+                rgba(130,170,255,0.9);
+
+            border-right-color:
+
+                rgba(80,120,255,0.5);
+
+            animation:
+
+                rotate
+                4s
+                linear
+                infinite;
+        }
+
+
+
+        /* =====================================================
+           SMALL ARC
+        ===================================================== */
+
+        .arc-2 {
+
+            width: 200px;
+
+            height: 200px;
+
+            border:
+
+                2px solid transparent;
+
+            border-bottom-color:
+
+                rgba(200,220,255,0.7);
+
+            border-left-color:
+
+                rgba(80,130,255,0.4);
+
+            animation:
+
+                rotateReverse
+                3s
+                linear
+                infinite;
+        }
+
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+
+            height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background:
+
+                rgba(5,6,10,0.72);
+
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+
+                1px solid
+                rgba(255,255,255,0.06);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+
+        /* =====================================================
+           BRAND
+        ===================================================== */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        .brand-icon {
+
+            width: 43px;
+
+            height: 43px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #6674ff,
+                    #3b82f6
+                );
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(70,90,255,0.30);
+        }
+
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        .status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+
+                0 0 12px
+                rgba(34,197,94,0.9);
+        }
+
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: 88%;
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding:
+
+                65px 0 40px;
+        }
+
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            max-width: 720px;
+
+            position: relative;
+
+            z-index: 3;
+
+            margin-bottom: 55px;
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+
+                8px 15px;
+
+            border-radius: 50px;
+
+            background:
+
+                rgba(65,105,220,0.08);
+
+            border:
+
+                1px solid
+                rgba(100,140,255,0.20);
+
+            color: #9bb5ff;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+
+                clamp(
+                    40px,
+                    5vw,
+                    64px
+                );
+
+            line-height: 1.04;
+
+            font-weight: 800;
+
+            letter-spacing: -2.5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #8fa8ff,
+                    #b19cff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            color: #8c919e;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+        .message {
+
+            max-width: 700px;
+
+            margin:
+
+                0 auto 30px;
+
+            padding:
+
+                14px 20px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            background:
+
+                rgba(239,68,68,0.08);
+
+            border:
+
+                1px solid
+                rgba(239,68,68,0.20);
+
+            color: #fca5a5;
+        }
+
+
+
+        /* =====================================================
+           DASHBOARD
+        ===================================================== */
+
+        .dashboard {
+
+            display: grid;
+
+            grid-template-columns:
+
+                1.45fr 1fr;
+
+            gap: 25px;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .card {
+
+            background:
+
+                rgba(12,15,24,0.86);
+
+            backdrop-filter:
+                blur(22px);
+
+            border:
+
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+
+                0 25px 80px
+                rgba(0,0,0,0.35);
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+
+                rgba(110,140,255,0.20);
+        }
+
+
+
+        /* =====================================================
+           CARD HEADER
+        ===================================================== */
+
+        .card-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+
+                22px 25px;
+
+            border-bottom:
+
+                1px solid
+                rgba(255,255,255,0.06);
+        }
+
+
+        .card-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .card-title-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+
+                rgba(76,110,255,0.10);
+
+            color: #8da8ff;
+        }
+
+
+        .card-title h2 {
+
+            font-size: 17px;
+
+            font-weight: 700;
+        }
+
+
+        .card-title p {
+
+            color: #656b78;
+
+            font-size: 12px;
+
+            margin-top: 3px;
+        }
+
+
+
+        /* =====================================================
+           ATTENDANCE SECTION
+        ===================================================== */
+
+        .attendance-section {
+
+            padding: 25px;
+        }
+
+
+
+        /* =====================================================
+           ATTENDANCE BUTTON
+        ===================================================== */
+
+        .attendance-btn {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #3b82f6
+                );
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+
+                0 10px 30px
+                rgba(59,100,255,0.22);
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .attendance-btn:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+
+                0 15px 40px
+                rgba(59,100,255,0.35);
+        }
+
+
+        .attendance-btn:active {
+
+            transform:
+                scale(0.98);
+        }
+
+
+
+        /* =====================================================
+           TABLE
+        ===================================================== */
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
+            margin-top: 22px;
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse:
+                collapse;
+
+            min-width: 550px;
+        }
+
+
+        th {
+
+            padding:
+
+                13px 16px;
+
+            text-align: left;
+
+            font-size: 11px;
+
+            color: #5f6572;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.7px;
+
+            background:
+
+                rgba(255,255,255,0.02);
+        }
+
+
+        td {
+
+            padding:
+
+                15px 16px;
+
+            font-size: 14px;
+
+            color: #c8ccd5;
+
+            border-top:
+
+                1px solid
+                rgba(255,255,255,0.045);
+        }
+
+
+        tbody tr {
+
+            transition:
+                0.2s;
+        }
+
+
+        tbody tr:hover {
+
+            background:
+
+                rgba(80,110,255,0.05);
+        }
+
+
+        .serial {
+
+            color: #7c8cff;
+
+            font-weight: 700;
+        }
+
+
+        .name {
+
+            color: white;
+
+            font-weight: 600;
+        }
+
+
+        .id-badge {
+
+            display: inline-block;
+
+            padding:
+
+                5px 10px;
+
+            border-radius: 7px;
+
+            background:
+
+                rgba(59,130,246,0.08);
+
+            color: #8fb8ff;
+
+            font-size: 11px;
+        }
+
+
+        .time {
+
+            color: #777d8a;
+        }
+
+
+
+        /* =====================================================
+           EMPTY STATE
+        ===================================================== */
+
+        .empty-state {
+
+            text-align: center;
+
+            padding: 45px 20px;
+
+            color: #656b78;
+        }
+
+
+        .empty-state .material-icons {
+
+            font-size: 45px;
+
+            color: #3f4552;
+
+            margin-bottom: 10px;
+        }
+
+
+
+        /* =====================================================
+           ADD USER
+        ===================================================== */
+
+        .add-user {
+
+            padding: 30px;
+        }
+
+
+        .form-label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #b8bdc8;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+
+        .input-wrapper .material-icons {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #656b78;
+
+            font-size: 20px;
+        }
+
+
+        input[type="text"] {
+
+            width: 100%;
+
+            padding:
+
+                15px
+                15px
+                15px
+                48px;
+
+            border-radius: 12px;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,0.08);
+
+            background:
+
+                rgba(0,0,0,0.22);
+
+            color: white;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            transition:
+                0.25s;
+        }
+
+
+        input[type="text"]::placeholder {
+
+            color: #555b68;
+        }
+
+
+        input[type="text"]:focus {
+
+            border-color:
+
+                rgba(100,130,255,0.6);
+
+            box-shadow:
+
+                0 0 0 3px
+                rgba(80,110,255,0.08);
+        }
+
+
+
+        /* =====================================================
+           ADD USER BUTTON
+        ===================================================== */
+
+        .add-btn {
+
+            width: 100%;
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+
+                rgba(255,255,255,0.06);
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                0.25s;
+        }
+
+
+        .add-btn:hover {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #3b82f6
+                );
+
+            transform:
+                translateY(-2px);
+        }
+
+
+
+        /* =====================================================
+           USER STATISTICS
+        ===================================================== */
+
+        .user-stat {
+
+            margin-top: 30px;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(70,100,255,0.08),
+                    rgba(90,50,180,0.06)
+                );
+
+            border:
+
+                1px solid
+                rgba(100,130,255,0.10);
+        }
+
+
+        .user-stat-label {
+
+            font-size: 11px;
+
+            letter-spacing:
+                0.8px;
+
+            color: #747a87;
+
+            margin-bottom: 5px;
+        }
+
+
+        .user-stat-number {
+
+            font-size: 34px;
+
+            font-weight: 800;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #91a8ff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+        }
+
+
+        .user-stat-text {
+
+            font-size: 12px;
+
+            color: #5f6572;
+
+            margin-top: 3px;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding:
+
+                40px 0 10px;
+
+            color: #424752;
+
+            font-size: 11px;
+        }
+
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .crystal-container {
+
+                right: -30px;
+
+                opacity: 0.55;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE / TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .dashboard {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .crystal-container {
+
+                right: -70px;
+
+                opacity: 0.22;
+            }
+
+
+            .hero {
+
+                max-width: 650px;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+
+                padding:
+                    0 20px;
+            }
+
+
+            .status {
+
+                display: none;
+            }
+
+
+            .container {
+
+                width: 92%;
+
+                padding-top: 40px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 38px;
+
+                letter-spacing: -1px;
+            }
+
+
+            .hero p {
+
+                font-size: 14px;
+            }
+
+
+            .crystal-container {
+
+                right: -150px;
+
+                top: 100px;
+
+                opacity: 0.12;
+            }
+
+
+            .card-header {
+
+                padding: 18px;
+            }
+
+
+            .attendance-section,
+            .add-user {
+
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ===================================================== -->
+
+    <div class="background">
+
+
+        <div class="network"></div>
+
+
+        <div class="background-glow"></div>
+
+
+
+        <!-- Floating particles -->
+
+        <div class="dot dot-1"></div>
+
+        <div class="dot dot-2"></div>
+
+        <div class="dot dot-3"></div>
+
+        <div class="dot dot-4"></div>
+
+        <div class="dot dot-5"></div>
+
+
+
+        <!-- =================================================
+             ROTATING CIRCLE
+        ================================================= -->
+
+        <div class="crystal-container">
+
+
+            <!-- Glow -->
+
+            <div class="glow"></div>
+
+
+            <!-- Large outer ring -->
+
+            <div class="ring ring-3"></div>
+
+
+            <!-- Main ring -->
+
+            <div class="ring"></div>
+
+
+            <!-- Inner ring -->
+
+            <div class="ring ring-2"></div>
+
+
+            <!-- Rotating arc -->
+
+            <div class="arc"></div>
+
+
+            <div class="arc arc-2"></div>
+
+
+            <!-- Orbit -->
+
+            <div class="orbit">
+
+                <div class="orbit-dot"></div>
+
+            </div>
+
+
+            <!-- Second orbit -->
+
+            <div class="orbit orbit-2">
+
+                <div class="orbit-dot"></div>
+
+            </div>
+
+
+            <!-- Center -->
+
+            <div class="core"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav class="navbar">
+
+
+        <div class="brand">
+
+
+            <div class="brand-icon">
+
+                <span class="material-icons">
+
+                    face
+
+                </span>
+
+            </div>
+
+
+            <span>
+
+                FaceAttend
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="status">
+
+
+            <span class="status-dot"></span>
+
+
+            System Online
+
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <main class="container">
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="hero">
+
+
+            <div class="hero-badge">
+
+
+                <span
+                    class="material-icons"
+                    style="font-size:16px;">
+
+                    verified
+
+                </span>
+
+
+                AI POWERED ATTENDANCE
+
+
+            </div>
+
+
+
+            <h1>
+
+                Face Recognition
+
+                <br>
+
+                <span>
+
+                    Attendance System
+
+                </span>
+
+            </h1>
+
+
+
+            <p>
+
+                Automatically identify registered users
+                and record attendance using real-time
+                facial recognition technology.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================= -->
+
+        {% if mess %}
+
+        <div class="message">
+
+            {{ mess }}
+
+        </div>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================= -->
+
+        <section class="dashboard">
+
+
+
+            <!-- =================================================
+                 ATTENDANCE CARD
+            ================================================= -->
+
+            <div class="card">
+
+
+                <div class="card-header">
+
+
+                    <div class="card-title">
+
+
+                        <div class="card-title-icon">
+
+                            <span class="material-icons">
+
+                                event_available
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+
+                                Today's Attendance
+
+                            </h2>
+
+
+                            <p>
+
+                                Live attendance records
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span
+                        class="material-icons"
+                        style="color:#454b58;">
+
+                        more_horiz
+
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="attendance-section">
+
+
+                    <!-- START FACE RECOGNITION -->
+
+                    <a
+                        href="/start"
+                        style="text-decoration:none;">
+
+
+                        <button
+                            class="attendance-btn"
+                            type="button">
+
+
+                            <span class="material-icons">
+
+                                face_retouching_natural
+
+                            </span>
+
+
+                            Start Face Recognition
+
+
+                            <span class="material-icons">
+
+                                arrow_forward
+
+                            </span>
+
+
+                        </button>
+
+
+                    </a>
+
+
+
+                    <!-- ATTENDANCE TABLE -->
+
+                    {% if l %}
+
+
+                    <div class="table-wrapper">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+
+                                        #
+
+                                    </th>
+
+
+                                    <th>
+
+                                        Name
+
+                                    </th>
+
+
+                                    <th>
+
+                                        ID
+
+                                    </th>
+
+
+                                    <th>
+
+                                        Time
+
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+
+                            <tbody>
+
+
+                                {% for i in range(l) %}
+
+
+                                <tr>
+
+
+                                    <td class="serial">
+
+                                        {{ i+1 }}
+
+                                    </td>
+
+
+                                    <td class="name">
+
+                                        {{ names[i] }}
+
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="id-badge">
+
+                                            {{ rolls[i] }}
+
+                                        </span>
+
+                                    </td>
+
+
+                                    <td class="time">
+
+                                        {{ times[i] }}
+
+                                    </td>
+
+
+                                </tr>
+
+
+                                {% endfor %}
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                    {% else %}
+
+
+                    <div class="empty-state">
+
+
+                        <span class="material-icons">
+
+                            event_busy
+
+                        </span>
+
+
+                        <p>
+
+                            No attendance recorded yet today.
+
+                        </p>
+
+
+                    </div>
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ADD USER CARD
+            ================================================= -->
+
+            <div class="card">
+
+
+                <div class="card-header">
+
+
+                    <div class="card-title">
+
+
+                        <div class="card-title-icon">
+
+                            <span class="material-icons">
+
+                                person_add
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+
+                                Add New User
+
+                            </h2>
+
+
+                            <p>
+
+                                Register a new face
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="add-user">
+
+
+                    <form
+                        action="/add"
+                        method="POST"
+                        enctype="multipart/form-data">
+
+
+                        <label
+                            class="form-label">
+
+                            New User Name
+
+                        </label>
+
+
+
+                        <div class="input-wrapper">
+
+
+                            <span class="material-icons">
+
+                                person
+
+                            </span>
+
+
+
+                            <input
+                                type="text"
+                                id="newusername"
+                                name="newusername"
+                                placeholder="Enter user's full name"
+                                required>
+
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="add-btn">
+
+
+                            <span
+                                class="material-icons"
+                                style="
+                                    font-size:18px;
+                                    vertical-align:middle;
+                                    margin-right:5px;
+                                ">
+
+                                add
+
+                            </span>
+
+
+                            Register New User
+
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- USER COUNT -->
+
+                    <div class="user-stat">
+
+
+                        <div class="user-stat-label">
+
+                            REGISTERED USERS
+
+                        </div>
+
+
+                        <div class="user-stat-number">
+
+                            {{ totalreg }}
+
+                        </div>
+
+
+                        <div class="user-stat-text">
+
+                            Users currently in the face database
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================= -->
+
+        <footer>
+
+            © 2026 FaceAttend •
+
+            Face Recognition Attendance System
+
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>
