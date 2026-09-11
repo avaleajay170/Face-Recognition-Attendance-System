@@ -20,11 +20,9 @@
 
 </div>
 
----
-
 <div align="center">
 
-## ⚡ ENGINEERING MODE
+⚡ ENGINEERING MODE
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=1800&pause=500&color=0EA5E9&center=true&vCenter=true&width=700&height=45&lines=%3E+Initializing+developer.profile...;%3E+Loading+AI+%2B+Full+Stack+modules...;%3E+Training+models...;%3E+Building+systems...;%3E+Status%3A+ONLINE+%E2%9A%A1" alt="Animated terminal" />
 
@@ -32,13 +30,12 @@
 
 </div>
 
-## 👋 About Me
+👋 About Me
 
-I am **Ajay Avale**, an Information Technology student at **Vishwakarma Institute of Technology, Pune**, pursuing my B.Tech with a **9.12/10.0 CGPA**. I completed my Diploma in Information Technology from AISSMS Polytechnic with **92.06%**.
+I am Ajay Avale, an Information Technology student at Vishwakarma Institute of Technology, Pune, pursuing my B.Tech with a 9.12/10.0 CGPA. I completed my Diploma in Information Technology from AISSMS Polytechnic with 92.06%.
 
-I enjoy building systems where **AI/ML, software engineering and real-world problem solving** meet. My work focuses on computer vision, deep learning, backend engineering, full-stack development and practical automation.
+I enjoy building systems where AI/ML, software engineering and real-world problem solving meet. My work focuses on computer vision, deep learning, backend engineering, full-stack development and practical automation.
 
-```python
 class AjayAvale:
     def __init__(self):
         self.role = "AI Developer | Full Stack Engineer"
@@ -52,7 +49,6 @@ class AjayAvale:
 
 me = AjayAvale()
 me.say_hi()
-```
 
 <div align="center">
 
@@ -60,36 +56,67 @@ me.say_hi()
 
 </div>
 
----
-
-# 🧠 What I Build
+🧠 What I Build
 
 <div align="center">
 
-| 🤖 AI / ML | 🌐 Full Stack | ⚙️ Engineering | 🏙️ Civic Tech |
-|:---:|:---:|:---:|:---:|
-| Deep Learning | Django / Flask | DSA | Geo-fencing |
-| Computer Vision | React / JS | OOP | Smart Routing |
-| OCR | REST APIs | DBMS / OS | Dashboards |
-| PyTorch / OpenCV | Database Systems | Computer Networks | Automation |
+🤖 AI / ML
+
+🌐 Full Stack
+
+⚙️ Engineering
+
+🏙️ Civic Tech
+
+Deep Learning
+
+Django / Flask
+
+DSA
+
+Geo-fencing
+
+Computer Vision
+
+React / JS
+
+OOP
+
+Smart Routing
+
+OCR
+
+REST APIs
+
+DBMS / OS
+
+Dashboards
+
+PyTorch / OpenCV
+
+Database Systems
+
+Computer Networks
+
+Automation
 
 </div>
 
----
+💼 Experience
 
-# 💼 Experience
+🚀 Software Developer Intern — Sumago Infotech Pvt. Ltd.
 
-### 🚀 Software Developer Intern — Sumago Infotech Pvt. Ltd.
-**June 2024 – July 2024 · Pune, India**
+June 2024 – July 2024 · Pune, India
 
-- Built full-stack web applications using **Python, Django and Flask**.
-- Worked on backend development, database integration and CRUD workflows.
-- Developed and integrated user-facing interfaces.
-- Gained practical experience across the complete web-development stack.
+Built full-stack web applications using Python, Django and Flask.
 
----
+Worked on backend development, database integration and CRUD workflows.
 
-# 🚀 Featured Projects
+Developed and integrated user-facing interfaces.
+
+Gained practical experience across the complete web-development stack.
+
+🚀 Featured Projects
 
 <div align="center">
 
@@ -97,21 +124,26 @@ me.say_hi()
 
 </div>
 
-## 🧠 DocIntegrity AI
-### AI-Powered Assignment Integrity Verification
+🧠 DocIntegrity AI
 
-`Django` `Python` `MySQL` `PyTorch` `OCR` `GPTZero API`
+AI-Powered Assignment Integrity Verification
 
-A platform for assignment authenticity verification using **handwriting verification + AI-content detection**.
+Django Python MySQL PyTorch OCR GPTZero API
 
-**Highlights**
-- Siamese Neural Network trained with the IAM Handwriting Database and a custom student handwriting dataset.
-- **97% validation accuracy** for handwriting verification.
-- OCR-based text extraction.
-- GPTZero API integration for AI-generated content detection.
-- Generates handwriting-match and AI-content scores.
+A platform for assignment authenticity verification using handwriting verification + AI-content detection.
 
-```text
+Highlights
+
+Siamese Neural Network trained with the IAM Handwriting Database and a custom student handwriting dataset.
+
+97% validation accuracy for handwriting verification.
+
+OCR-based text extraction.
+
+GPTZero API integration for AI-generated content detection.
+
+Generates handwriting-match and AI-content scores.
+
              STUDENT SUBMISSION
                      │
           ┌──────────┴──────────┐
@@ -127,131 +159,143 @@ A platform for assignment authenticity verification using **handwriting verifica
           └──────────┬──────────┘
                      ▼
               INTEGRITY REPORT
-```
 
----
+🏙️ CivicSphere
 
-## 🏙️ CivicSphere
-### AI-Powered Civic Issue Intelligence Platform
+AI-Powered Civic Issue Intelligence Platform
 
-`Flask` `Python` `Firebase` `Google Maps API`
+Flask Python Firebase Google Maps API
 
 A geo-fenced civic reporting platform designed to improve complaint routing, escalation and public transparency.
 
-**Highlights**
-- Geo-fenced issue reporting within Pune.
-- Automatic constituency detection.
-- Smart complaint routing.
-- Escalation workflows.
-- Public transparency dashboard.
+Highlights
 
----
+Geo-fenced issue reporting within Pune.
 
-## 📍 Smart Attendance System
-### Geolocation + Browser Fingerprinting
+Automatic constituency detection.
 
-`Python` `Flask` `MySQL` `JavaScript`
+Smart complaint routing.
 
-A secure attendance platform designed to reduce proxy attendance through **geolocation and browser fingerprinting**.
+Escalation workflows.
 
-**Highlights**
-- Automated authentication.
-- Location-based validation.
-- Browser fingerprinting.
-- Real-time attendance logging.
-- Structured attendance records.
+Public transparency dashboard.
 
----
+📍 Smart Attendance System
 
-# 🛠️ Tech Stack
+Geolocation + Browser Fingerprinting
+
+Python Flask MySQL JavaScript
+
+A secure attendance platform designed to reduce proxy attendance through geolocation and browser fingerprinting.
+
+Highlights
+
+Automated authentication.
+
+Location-based validation.
+
+Browser fingerprinting.
+
+Real-time attendance logging.
+
+Structured attendance records.
+
+🛠️ Tech Stack
 
 <div align="center">
 
-### Languages
+Languages
+
 <img src="https://skillicons.dev/icons?i=c,cpp,python,java,js" />
 
-### AI / ML
+AI / ML
+
 <img src="https://skillicons.dev/icons?i=pytorch,opencv" />
 
-### Frameworks
+Frameworks
+
 <img src="https://skillicons.dev/icons?i=django,flask,react,flutter" />
 
-### Databases
+Databases
+
 <img src="https://skillicons.dev/icons?i=mysql,mongodb,firebase" />
 
-### Tools
+Tools
+
 <img src="https://skillicons.dev/icons?i=git,github,docker,vscode,androidstudio" />
 
 </div>
 
-**Also working with:** Scikit-learn · OCR · Siamese Neural Networks · NumPy · Pandas · Matplotlib · REST APIs
+Also working with: Scikit-learn · OCR · Siamese Neural Networks · NumPy · Pandas · Matplotlib · REST APIs
 
----
-
-# 📊 GitHub Analytics
+📊 GitHub Analytics
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=avaleajay170&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=00000000&title_color=38bdf8&text_color=94a3b8&icon_color=0ea5e9&rank_icon=github" height="180"/>
+<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=avaleajay170&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=transparent&title_color=38bdf8&text_color=94a3b8&icon_color=0ea5e9&rank_icon=github" height="180" alt="GitHub statistics"/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=avaleajay170&layout=compact&langs_count=8&hide_border=true&bg_color=00000000&title_color=38bdf8&text_color=94a3b8" height="180"/>
+<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=avaleajay170&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=38bdf8&text_color=94a3b8" height="180" alt="Top languages"/>
 
-<br/>
+<br/><br/>
 
-<img src="https://streak-stats.demolab.com?user=avaleajay170&hide_border=true&background=00000000&ring=0ea5e9&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" height="180"/>
+<img src="https://streak-stats.demolab.com?user=avaleajay170&hide_border=true&background=00000000&ring=0ea5e9&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" height="180" alt="GitHub streak"/>
+
+</div>
+---
+
+📈 Contribution Activity
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Animated contribution snake"/>
+
+<br/><br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=avaleajay170&bg_color=020617&color=94a3b8&line=0ea5e9&point=38bdf8&area=true&hide_border=true&custom_title=Ajay%27s%20Contribution%20Graph" width="96%" alt="Contribution graph"/>
+
+</div>
+---
+
+🏆 GitHub Trophies
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/150%2B-DSA%20Problems-0ea5e9?style=for-the-badge&logo=leetcode&logoColor=white"/>
+<img src="https://img.shields.io/badge/2-Patents-075985?style=for-the-badge&logo=google-scholar&logoColor=white"/>
+<img src="https://img.shields.io/badge/2-IEEE%20Papers-0284c7?style=for-the-badge&logo=ieee&logoColor=white"/>
+<img src="https://img.shields.io/badge/1-Scopus%20Indexed-38bdf8?style=for-the-badge&logo=academia&logoColor=white"/>
+
+</div>
+---
+
+🏆 Achievements
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=1800&pause=700&color=38BDF8&center=true&vCenter=true&width=850&height=42&lines=BUILDING+%E2%80%A2+COMPETING+%E2%80%A2+RESEARCHING+%E2%80%A2+SHIPPING;AWARDS+%E2%80%A2+PATENTS+%E2%80%A2+IEEE+RESEARCH+%E2%80%A2+DSA" alt="Achievements animation"/>
 
 </div>
 
----
+🥇 Best Solution Award — Innovate You National Level Techathon 3.0 (2026)
 
-# 📈 Contribution Activity
+🏆 Top 15 / 455+ teams with a ₹10,000 prize.
 
-<div align="center">
+🌟 Uplifter Award — Sumago Infotech Pvt. Ltd.
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=avaleajay170&bg_color=020617&color=94a3b8&line=0ea5e9&point=38bdf8&area=true&hide_border=true&custom_title=Ajay's%20Contribution%20Graph" width="96%"/>
+🧩 150+ DSA problems solved across LeetCode and GeeksforGeeks.
 
-</div>
+📚 2 patents and 2 IEEE papers, including 1 Scopus-indexed publication.
 
----
+📜 Certifications
 
-# 🏆 GitHub Trophies
+🎓 The Git & GitHub Bootcamp — Udemy
 
-<div align="center">
+🐳 Docker and Kubernetes: The Complete Guide — Udemy
 
-<img src="https://github-profile-trophy.vercel.app/?username=avaleajay170&theme=algolia&no-frame=true&no-bg=true&margin-w=8&column=7" alt="GitHub Trophies"/>
-
-</div>
-
----
-
-# 🏆 Achievements
+🎯 Current Engineering Focus
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=70&text=ACHIEVEMENTS%20%26%20RESEARCH&fontSize=25&fontColor=ffffff&animation=twinkling&color=0:020617,50:075985,100:0ea5e9" width="90%"/>
-
-</div>
-
-- 🥇 **Best Solution Award** — Innovate You National Level Techathon 3.0 (2026)
-- 🏆 **Top 15 / 455+ teams** with a **₹10,000 prize**.
-- 🌟 **Uplifter Award** — Sumago Infotech Pvt. Ltd.
-- 🧩 **150+ DSA problems** solved across LeetCode and GeeksforGeeks.
-- 📚 **2 patents** and **2 IEEE papers**, including **1 Scopus-indexed publication**.
-
----
-
-# 📜 Certifications
-
-- 🎓 **The Git & GitHub Bootcamp** — Udemy
-- 🐳 **Docker and Kubernetes: The Complete Guide** — Udemy
-
----
-
-# 🎯 Current Engineering Focus
-
-<div align="center">
-
-```text
 ╔══════════════════════════════════════════════════════════╗
 ║                    CURRENT FOCUS                         ║
 ╠══════════════════════════════════════════════════════════╣
@@ -261,13 +305,10 @@ A secure attendance platform designed to reduce proxy attendance through **geolo
 ║  ⚙️ Engineering   → DSA + System Thinking              ║
 ║  🚀 Projects      → Real-world Problem Solving          ║
 ╚══════════════════════════════════════════════════════════╝
-```
 
 </div>
 
----
-
-# 🧪 Engineering Philosophy
+🧪 Engineering Philosophy
 
 <div align="center">
 
@@ -275,13 +316,9 @@ A secure attendance platform designed to reduce proxy attendance through **geolo
 
 </div>
 
-```text
 IDEA → PROTOTYPE → VALIDATE → ENGINEER → DEPLOY → MEASURE → ITERATE
-```
 
----
-
-# 🤝 Let's Connect
+🤝 Let's Connect
 
 <div align="center">
 
