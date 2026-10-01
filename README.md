@@ -1,339 +1,949 @@
-<div align="center">
+# 🤖 Face Recognition Attendance System
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Flask-Web%20Application-000000?style=for-the-badge&logo=flask&logoColor=white">
+  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
+  <img src="https://img.shields.io/badge/scikit--learn-KNN-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white">
+  <img src="https://img.shields.io/badge/Pandas-Data%20Processing-150458?style=for-the-badge&logo=pandas&logoColor=white">
+  <img src="https://img.shields.io/badge/Joblib-Model%20Persistence-2E7D32?style=for-the-badge">
+</p>
+
+<p align="center">
+  <strong>A webcam-based attendance application that detects faces in real time, identifies registered users with a trained K-Nearest Neighbors classifier, and records attendance automatically in daily CSV files.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/avaleajay170/Face-Recognition-Attendance-System">📂 Repository</a>
+  •
+  <a href="#-features">Features</a>
+  •
+  <a href="#-system-workflow">Workflow</a>
+  •
+  <a href="#-installation">Installation</a>
+  •
+  <a href="#-project-structure">Project Structure</a>
+</p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=260&text=AJAY%20AVALE&fontAlign=50&fontAlignY=36&fontSize=54&fontColor=ffffff&desc=AI%20%7C%20FULL%20STACK%20%7C%20SOFTWARE%20ENGINEERING&descAlign=50&descAlignY=60&descSize=18&animation=twinkling&color=0:020617,35:0f172a,65:075985,100:0ea5e9" width="100%"/>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=23&duration=2200&pause=700&color=38BDF8&center=true&vCenter=true&width=900&height=55&lines=AI+Developer+%7C+Full+Stack+Engineer;Computer+Vision+%7C+Deep+Learning;Python+%7C+Django+%7C+Flask+%7C+React;Building+Practical+AI+for+Real-World+Problems;Turning+Ideas+%E2%86%92+Systems+%E2%86%92+Products" alt="Animated typing introduction" />
-
-<br/>
-
-<a href="https://github.com/avaleajay170"><img src="https://img.shields.io/badge/GitHub-AVALeAJAY170-111827?style=for-the-badge&logo=github&logoColor=white"/></a>
-<a href="mailto:avaleajay95@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<a href="https://leetcode.com/"><img src="https://img.shields.io/badge/LeetCode-150%2B%20Solved-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/></a>
-
-<br/><br/>
-
-<img src="https://komarev.com/ghpvc/?username=avaleajay170&label=PROFILE+VIEWS&color=0ea5e9&style=for-the-badge" alt="Profile views"/>
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Contribution snake animation"/>
-
-</div>
-
-<div align="center">
-
-⚡ ENGINEERING MODE
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=1800&pause=500&color=0EA5E9&center=true&vCenter=true&width=700&height=45&lines=%3E+Initializing+developer.profile...;%3E+Loading+AI+%2B+Full+Stack+modules...;%3E+Training+models...;%3E+Building+systems...;%3E+Status%3A+ONLINE+%E2%9A%A1" alt="Animated terminal" />
-
-<img src="https://media.giphy.com/media/SvurAlz5b7dHK/giphy.gif" width="380" alt="Coding animation"/>
-
-</div>
-
-👋 About Me
-
-I am Ajay Avale, an Information Technology student at Vishwakarma Institute of Technology, Pune, pursuing my B.Tech with a 9.12/10.0 CGPA. I completed my Diploma in Information Technology from AISSMS Polytechnic with 92.06%.
-
-I enjoy building systems where AI/ML, software engineering and real-world problem solving meet. My work focuses on computer vision, deep learning, backend engineering, full-stack development and practical automation.
-
-class AjayAvale:
-    def __init__(self):
-        self.role = "AI Developer | Full Stack Engineer"
-        self.location = "Pune, India"
-        self.cgpa = 9.12
-        self.currently_learning = ["Computer Vision", "Deep Learning", "System Design"]
-        self.fun_fact = "Trained a Siamese Network to spot fake handwriting."
-
-    def say_hi(self):
-        print("Thanks for stopping by — let's build something real. 🚀")
-
-me = AjayAvale()
-me.say_hi()
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=rect&height=80&text=BUILD%20%E2%80%A2%20LEARN%20%E2%80%A2%20SHIP&fontSize=26&fontColor=38bdf8&color=0:020617,50:0f172a,100:082f49&animation=fadeIn" width="92%"/>
-
-</div>
-
-🧠 What I Build
-
-<div align="center">
-
-🤖 AI / ML
-
-🌐 Full Stack
-
-⚙️ Engineering
-
-🏙️ Civic Tech
-
-Deep Learning
-
-Django / Flask
-
-DSA
-
-Geo-fencing
-
-Computer Vision
-
-React / JS
-
-OOP
-
-Smart Routing
-
-OCR
-
-REST APIs
-
-DBMS / OS
-
-Dashboards
-
-PyTorch / OpenCV
-
-Database Systems
-
-Computer Networks
-
-Automation
-
-</div>
-
-💼 Experience
-
-🚀 Software Developer Intern — Sumago Infotech Pvt. Ltd.
-
-June 2024 – July 2024 · Pune, India
-
-Built full-stack web applications using Python, Django and Flask.
-
-Worked on backend development, database integration and CRUD workflows.
-
-Developed and integrated user-facing interfaces.
-
-Gained practical experience across the complete web-development stack.
-
-🚀 Featured Projects
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=soft&height=90&text=PROJECT%20LAB&fontSize=32&fontColor=ffffff&animation=twinkling&color=0:0f172a,50:075985,100:0ea5e9" width="90%"/>
-
-</div>
-
-🧠 DocIntegrity AI
-
-AI-Powered Assignment Integrity Verification
-
-Django Python MySQL PyTorch OCR GPTZero API
-
-A platform for assignment authenticity verification using handwriting verification + AI-content detection.
-
-Highlights
-
-Siamese Neural Network trained with the IAM Handwriting Database and a custom student handwriting dataset.
-
-97% validation accuracy for handwriting verification.
-
-OCR-based text extraction.
-
-GPTZero API integration for AI-generated content detection.
-
-Generates handwriting-match and AI-content scores.
-
-             STUDENT SUBMISSION
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-   HANDWRITING IMAGE           TEXT
-          │                     │
-          ▼                     ▼
-   SIAMESE NETWORK             OCR
-          │                     │
-          ▼                     ▼
-    MATCH SCORE            GPTZero API
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-              INTEGRITY REPORT
-
-🏙️ CivicSphere
-
-AI-Powered Civic Issue Intelligence Platform
-
-Flask Python Firebase Google Maps API
-
-A geo-fenced civic reporting platform designed to improve complaint routing, escalation and public transparency.
-
-Highlights
-
-Geo-fenced issue reporting within Pune.
-
-Automatic constituency detection.
-
-Smart complaint routing.
-
-Escalation workflows.
-
-Public transparency dashboard.
-
-📍 Smart Attendance System
-
-Geolocation + Browser Fingerprinting
-
-Python Flask MySQL JavaScript
-
-A secure attendance platform designed to reduce proxy attendance through geolocation and browser fingerprinting.
-
-Highlights
-
-Automated authentication.
-
-Location-based validation.
-
-Browser fingerprinting.
-
-Real-time attendance logging.
-
-Structured attendance records.
-
-🛠️ Tech Stack
-
-<div align="center">
-
-Languages
-
-<img src="https://skillicons.dev/icons?i=c,cpp,python,java,js" />
-
-AI / ML
-
-<img src="https://skillicons.dev/icons?i=pytorch,opencv" />
-
-Frameworks
-
-<img src="https://skillicons.dev/icons?i=django,flask,react,flutter" />
-
-Databases
-
-<img src="https://skillicons.dev/icons?i=mysql,mongodb,firebase" />
-
-Tools
-
-<img src="https://skillicons.dev/icons?i=git,github,docker,vscode,androidstudio" />
-
-</div>
-
-Also working with: Scikit-learn · OCR · Siamese Neural Networks · NumPy · Pandas · Matplotlib · REST APIs
-
-📊 GitHub Analytics
-
-<div align="center">
-
-<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=avaleajay170&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=transparent&title_color=38bdf8&text_color=94a3b8&icon_color=0ea5e9&rank_icon=github" height="180" alt="GitHub statistics"/>
-
-<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=avaleajay170&layout=compact&langs_count=8&hide_border=true&theme=transparent&title_color=38bdf8&text_color=94a3b8" height="180" alt="Top languages"/>
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=avaleajay170&hide_border=true&background=00000000&ring=0ea5e9&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" height="180" alt="GitHub streak"/>
-
-</div>
 ---
 
-📈 Contribution Activity
+## 📖 Table of Contents
 
-<div align="center">
+<details>
+<summary>Click to expand</summary>
 
-<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Animated contribution snake"/>
+- [📌 Overview](#-overview)
+- [🎯 Problem Statement](#-problem-statement)
+- [💡 Objectives](#-objectives)
+- [✨ Features](#-features)
+- [🧠 How Face Recognition Works](#-how-face-recognition-works)
+- [🔄 System Workflow](#-system-workflow)
+- [🧩 Detection & Recognition Pipeline](#-detection--recognition-pipeline)
+- [👤 User Registration](#-user-registration)
+- [✅ Attendance Marking](#-attendance-marking)
+- [📊 Attendance Records](#-attendance-records)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [🏗️ System Architecture](#️-system-architecture)
+- [📂 Project Structure](#-project-structure)
+- [⚙️ Installation](#️-installation)
+- [▶️ Running the Application](#️-running-the-application)
+- [🗃️ Model & Data Storage](#️-model--data-storage)
+- [🧪 Testing](#-testing)
+- [⚠️ Limitations & Security Considerations](#️-limitations--security-considerations)
+- [🚀 Future Scope](#-future-scope)
+- [🤝 Contributing](#-contributing)
+- [👨‍💻 Developer](#-developer)
+- [📄 License](#-license)
 
-<br/><br/>
+</details>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=avaleajay170&bg_color=020617&color=94a3b8&line=0ea5e9&point=38bdf8&area=true&hide_border=true&custom_title=Ajay%27s%20Contribution%20Graph" width="96%" alt="Contribution graph"/>
-
-</div>
 ---
 
-🏆 GitHub Trophies
+# 📌 Overview
 
-<div align="center">
+The **Face Recognition Attendance System** is a Python-based web application that combines **Flask, OpenCV, and scikit-learn** to automate attendance using a webcam.
 
-<img src="https://img.shields.io/badge/150%2B-DSA%20Problems-0ea5e9?style=for-the-badge&logo=leetcode&logoColor=white"/>
-<img src="https://img.shields.io/badge/2-Patents-075985?style=for-the-badge&logo=google-scholar&logoColor=white"/>
-<img src="https://img.shields.io/badge/2-IEEE%20Papers-0284c7?style=for-the-badge&logo=ieee&logoColor=white"/>
-<img src="https://img.shields.io/badge/1-Scopus%20Indexed-38bdf8?style=for-the-badge&logo=academia&logoColor=white"/>
+Instead of manually entering attendance, the application:
 
-</div>
+1. Captures video from the webcam.
+2. Detects faces in the camera feed.
+3. Resizes the detected face.
+4. Uses a trained KNN classifier to identify the registered user.
+5. Adds the recognized user to the current day's attendance file.
+6. Prevents duplicate attendance entries for the same roll number on that day.
+
+The project provides two main operations:
+
+- **Start Face Recognition** — identify users and record attendance.
+- **Register New User** — capture a set of face images and retrain the recognition model.
+
 ---
 
-🏆 Achievements
+# 🎯 Problem Statement
+
+Manual attendance systems can be:
+
+- Time consuming
+- Repetitive
+- Prone to data-entry mistakes
+- Difficult to manage for larger groups
+- Dependent on manual identification
+
+This project explores a computer-vision-based approach where a webcam is used to identify registered users and record attendance automatically.
+
+---
+
+# 💡 Objectives
+
+The application is designed to:
+
+- Automate attendance using facial recognition
+- Detect faces through a webcam
+- Maintain a registered face dataset
+- Train a machine-learning classifier for identification
+- Record name, roll number, and time
+- Avoid duplicate attendance records
+- Provide a simple browser-based interface
+- Allow new users to be registered without manually editing the model
+
+---
+
+# ✨ Features
+
+## 🎥 Real-Time Face Detection
+
+The system uses OpenCV's Haar Cascade classifier:
+
+```
+haarcascade_frontalface_default.xml
+```
+
+The webcam stream is continuously analyzed for faces.
+
+---
+
+## 🧠 Face Recognition with KNN
+
+The recognition model is created with:
+
+```python
+KNeighborsClassifier(n_neighbors=5)
+```
+
+Captured face images are resized to:
+
+```
+50 × 50
+```
+
+and flattened into feature vectors before being passed to the classifier.
+
+---
+
+## 👤 New User Registration
+
+The application includes a registration workflow that:
+
+- Accepts a new username
+- Creates a dedicated folder for the user
+- Opens the webcam
+- Detects the user's face
+- Captures **30 face images**
+- Stores the captured images
+- Retrains the KNN model
+- Saves the updated model using Joblib
+
+This allows the recognition database to grow directly from the application.
+
+---
+
+## ✅ Automatic Attendance
+
+When a known face is recognized, the system extracts the registered username and roll number and records:
+
+```
+Name
+Roll
+Time
+```
+
+The current date determines the attendance CSV file.
+
+Example:
+
+```
+Attendance/Attendance-09_11_26.csv
+```
+
+---
+
+## 🚫 Duplicate Prevention
+
+Before writing a new attendance record, the system checks whether the recognized user's roll number already exists in the current day's CSV file.
+
+Conceptually:
+
+```
+Recognized User
+      ↓
+Read Today's CSV
+      ↓
+Roll Number Already Present?
+      ├── Yes → Do Not Add Again
+      └── No  → Add Attendance
+```
+
+---
+
+## 📊 Live Attendance Dashboard
+
+The web interface displays:
+
+- Today's attendance
+- Name
+- Roll number
+- Time
+- Total registered users
+
+The dashboard also provides a button to start the face-recognition process.
+
+---
+
+## 🎨 Interactive UI
+
+The current interface includes:
+
+- Dark modern dashboard
+- Responsive layout
+- Animated visual background
+- Face-recognition themed design
+- Live attendance table
+- User-registration panel
+- Registered-user statistics
+- Responsive mobile styling
+
+---
+
+# 🧠 How Face Recognition Works
+
+This project uses a two-stage computer-vision pipeline.
+
+## Stage 1 — Face Detection
+
+OpenCV's Haar Cascade detects possible faces inside the webcam frame.
+
+```
+Camera Frame
+     ↓
+Convert to Grayscale
+     ↓
+Haar Cascade
+     ↓
+Face Bounding Box
+```
+
+The implementation uses:
+
+```python
+cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+```
+
+followed by:
+
+```python
+face_detector.detectMultiScale(
+    gray,
+    1.2,
+    5,
+    minSize=(20, 20)
+)
+```
+
+---
+
+## Stage 2 — User Identification
+
+Once a face is detected:
+
+```
+Detected Face
+     ↓
+Resize to 50 × 50
+     ↓
+Flatten
+     ↓
+KNN Classifier
+     ↓
+Predicted User
+```
+
+The trained classifier is loaded from:
+
+```
+static/face_recognition_model.pkl
+```
+
+---
+
+# 🔄 System Workflow
+
+```
+                   ┌────────────────────┐
+                   │      Web App       │
+                   └─────────┬──────────┘
+                             │
+                 ┌───────────┴───────────┐
+                 ▼                       ▼
+          Start Recognition        Add New User
+                 │                       │
+                 ▼                       ▼
+          Open Webcam               Open Webcam
+                 │                       │
+                 ▼                       ▼
+          Detect Face               Capture Images
+                 │                       │
+                 ▼                       ▼
+          Resize Face              Store Face Data
+                 │                       │
+                 ▼                       ▼
+        KNN Classification          Train KNN
+                 │                       │
+                 ▼                       ▼
+          Identify User          Save Model (.pkl)
+                 │
+                 ▼
+       Check Today's Attendance
+                 │
+          ┌──────┴──────┐
+          │             │
+       Already        New User
+       Present            │
+          │               ▼
+          │         Write Attendance
+          │               │
+          └───────┬───────┘
+                  ▼
+           Display Dashboard
+```
+
+---
+
+# 🧩 Detection & Recognition Pipeline
+
+The implementation follows this sequence:
+
+```
+1. Capture webcam frame
+2. Convert frame to grayscale
+3. Detect face regions
+4. Select the detected face
+5. Resize the face to 50 × 50
+6. Flatten the image into a feature vector
+7. Load the saved KNN model
+8. Predict the user's label
+9. Extract name and roll number
+10. Check today's CSV
+11. Add attendance when not already present
+```
+
+---
+
+# 👤 User Registration
+
+The registration endpoint accepts a username from the dashboard.
+
+Example:
+
+```
+Name entered
+     ↓
+Create static/faces/<name>_<id>/
+     ↓
+Open webcam
+     ↓
+Detect face
+     ↓
+Capture 30 images
+     ↓
+Save images
+     ↓
+Retrain KNN
+     ↓
+Save face_recognition_model.pkl
+```
+
+The current implementation captures one face image every five webcam iterations until 30 images have been stored.
+
+---
+
+# ✅ Attendance Marking
+
+The attendance process is handled by the `/start` route.
+
+When the webcam recognizes a registered face, the system generates:
+
+```python
+username = name.split('_')[0]
+userid = name.split('_')[1]
+```
+
+and records the current time.
+
+Attendance is written to:
+
+```
+Attendance/Attendance-MM_DD_YY.csv
+```
+
+with the columns:
+
+```
+Name,Roll,Time
+```
+
+Example:
+
+| Name | Roll | Time |
+|---|---:|---|
+| Ajay | 2 | 10:32:18 |
+| Aditya | 3 | 10:35:42 |
+
+---
+
+# 📊 Attendance Records
+
+Attendance files are stored inside:
+
+```
+Attendance/
+```
+
+The repository contains multiple dated CSV examples.
+
+The application creates a new daily CSV when the corresponding file does not yet exist.
+
+Daily records are loaded with Pandas and shown on the dashboard.
+
+---
+
+# 🛠️ Technology Stack
+
+## Backend
+
+- Python
+- Flask
+
+## Computer Vision
+
+- OpenCV
+- Haar Cascade Classifier
+
+## Machine Learning
+
+- scikit-learn
+- K-Nearest Neighbors (KNN)
+
+## Data Processing
+
+- Pandas
+- NumPy
+
+## Model Persistence
+
+- Joblib
+
+## Frontend
+
+- HTML5
+- CSS3
+- Jinja templates
+- Material Icons
+
+---
+
+# 🏗️ System Architecture
+
+```
+                    Browser
+                       │
+                       ▼
+                ┌─────────────┐
+                │    Flask    │
+                │  Web Layer  │
+                └──────┬──────┘
+                       │
+           ┌───────────┴───────────┐
+           ▼                       ▼
+      Dashboard              Recognition
+                                  │
+                                  ▼
+                            OpenCV Webcam
+                                  │
+                                  ▼
+                         Haar Face Detector
+                                  │
+                                  ▼
+                          Face Preprocessing
+                            (50 × 50)
+                                  │
+                                  ▼
+                         KNN Classification
+                                  │
+                                  ▼
+                       Recognized User Label
+                                  │
+                    ┌─────────────┴─────────────┐
+                    ▼                           ▼
+               CSV Attendance             Dashboard Table
+```
+
+---
+
+# 📂 Project Structure
+
+```
+Face-Recognition-Attendance-System/
+│
+├── app.py
+├── README.md
+├── background.png
+├── Interface.png
+├── haarcascade_frontalface_default.xml
+│
+├── Attendance/
+│   ├── Attendance-03_13_25.csv
+│   ├── Attendance-07_10_24.csv
+│   ├── Attendance-08_07_24.csv
+│   └── ...
+│
+└── static/
+    │
+    ├── face_recognition_model.pkl
+    │
+    └── faces/
+        ├── Aditya_3/
+        ├── Ajay_2/
+        ├── Virat_1/
+        └── ...
+```
+
+---
+
+# 🗃️ Model & Data Storage
+
+## Face Dataset
+
+Each registered user gets a directory under:
+
+```
+static/faces/
+```
+
+The directory naming convention is:
+
+```
+<username>_<user_id>
+```
+
+Example:
+
+```
+static/faces/Ajay_2/
+static/faces/Aditya_3/
+static/faces/Virat_1/
+```
+
+---
+
+## Training Data
+
+Each user directory contains captured face images.
+
+The training pipeline:
+
+```
+Face Image
+   ↓
+Resize 50 × 50
+   ↓
+Flatten
+   ↓
+Feature Matrix
+   +
+User Labels
+   ↓
+KNN Training
+```
+
+The trained model is stored using Joblib:
+
+```
+static/face_recognition_model.pkl
+```
+
+---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/avaleajay170/Face-Recognition-Attendance-System.git
+cd Face-Recognition-Attendance-System
+```
+
+---
+
+## 2️⃣ Create a Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+venv\\Scripts\\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3️⃣ Install Dependencies
+
+Install the Python packages used by the application:
+
+```bash
+pip install flask opencv-python numpy pandas scikit-learn joblib
+```
+
+> The current GitHub tree does not show a root-level `requirements.txt`, so the command above reflects the libraries imported by `app.py`.
+
+---
+
+# ▶️ Running the Application
+
+Start Flask:
+
+```bash
+python app.py
+```
+
+Then open:
+
+```
+http://127.0.0.1:5000
+```
+
+or:
+
+```
+http://localhost:5000
+```
+
+---
+
+# 🎥 Running Face Recognition
+
+From the dashboard:
+
+```
+Start Face Recognition
+        ↓
+Webcam Opens
+        ↓
+Face Detected
+        ↓
+User Identified
+        ↓
+Attendance Recorded
+```
+
+Press **ESC** in the OpenCV window to stop the recognition loop.
+
+---
+
+# ➕ Registering a New User
+
+From the dashboard:
+
+```
+Add New User
+     ↓
+Enter Name
+     ↓
+Register New User
+     ↓
+Camera Opens
+     ↓
+30 Face Images Captured
+     ↓
+Model Retrained
+```
+
+After registration, the new user becomes part of the KNN training dataset.
+
+---
+
+# 🧪 Testing
+
+Recommended test cases include:
+
+| Test Case | Expected Result |
+|---|---|
+| Registered user appears on camera | User is identified |
+| Same user appears again | Duplicate attendance is prevented |
+| New user is registered | Face samples are stored |
+| Model retraining completes | Updated `.pkl` model is created |
+| No face is visible | No attendance is added |
+| Attendance file does not exist | Daily CSV is created |
+| ESC is pressed | Recognition window closes |
+
+---
+
+# ⚠️ Limitations & Security Considerations
+
+This implementation is a practical academic/project prototype and has several limitations.
+
+### Lighting & Camera Conditions
+
+Face detection and classification can be affected by:
+
+- Poor lighting
+- Camera quality
+- Face angle
+- Occlusion
+- Significant appearance changes
+
+### Recognition Model
+
+The current implementation uses a KNN classifier over flattened 50 × 50 pixel images. This is relatively simple compared with modern face-embedding or deep-learning approaches.
+
+### Multiple Faces
+
+The current recognition loop selects the first detected face rather than managing a full multi-person recognition pipeline.
+
+### User ID Generation
+
+New user IDs are generated from the number of user folders. Removing folders or changing the dataset structure could therefore affect ID allocation.
+
+### Local Webcam Dependency
+
+The recognition process expects access to a webcam on the machine running the application.
+
+### Privacy
+
+Face images are biometric-related data and should be handled carefully. In a production system, access control, secure storage, retention rules, and user consent should be considered.
+
+### Production Security
+
+The development application should not be exposed directly to the public internet without appropriate:
+
+- Authentication
+- HTTPS
+- Access control
+- Input validation
+- Secure deployment configuration
+- Logging and monitoring
+
+---
+
+# 🚀 Future Scope
+
+## 🧠 Deep Face Embeddings
+
+Replace raw-image KNN with modern facial embeddings using approaches such as:
+
+- FaceNet
+- ArcFace
+- DeepFace-based pipelines
+
+This can provide a stronger representation than flattened pixel values.
+
+---
+
+## 👥 Multi-Face Recognition
+
+Support recognition of multiple students simultaneously:
+
+```
+Camera Frame
+      ↓
+Detect All Faces
+      ↓
+Recognize Each Face
+      ↓
+Validate Attendance
+      ↓
+Record Multiple Users
+```
+
+---
+
+## 📍 Geolocation Integration
+
+Combine face recognition with physical-location validation.
+
+```
+Face Verification
+       +
+Geolocation
+       +
+Time Window
+       ↓
+Attendance Decision
+```
+
+---
+
+## 🔐 Liveness Detection
+
+Add anti-spoofing measures to reduce the risk of attendance being marked using:
+
+- Printed photographs
+- Screens
+- Replay attacks
+
+---
+
+## ☁️ Database Integration
+
+Move from daily CSV files to a database such as:
+
+- MySQL
+- PostgreSQL
+- MongoDB
+
+This would make searching, reporting, and multi-user management easier.
+
+---
+
+## 📊 Advanced Analytics
+
+Add:
+
+- Attendance percentage
+- Student-wise summaries
+- Monthly reports
+- Subject-wise analysis
+- Trend charts
+- Export to Excel/PDF
+
+---
+
+## 🌐 Production Deployment
+
+The Flask application can be redesigned for deployment using:
+
+```
+Frontend
+   ↓
+Backend API
+   ↓
+Recognition Service
+   ↓
+Database
+   ↓
+Cloud Storage
+```
+
+---
+
+# 🧠 Key Concepts Demonstrated
+
+This project demonstrates practical use of:
+
+- Computer Vision
+- Face Detection
+- Face Recognition
+- Machine Learning Classification
+- KNN
+- OpenCV
+- Flask
+- Webcam Processing
+- Dataset Management
+- Model Serialization
+- Pandas
+- CSV-based data storage
+- Real-time application design
+
+---
+
+# 📈 Project Snapshot
+
+| Component | Implementation |
+|---|---|
+| Web Framework | Flask |
+| Face Detection | Haar Cascade |
+| Recognition | KNN |
+| Training Images | 30 per registration |
+| Face Size | 50 × 50 |
+| Model Storage | Joblib `.pkl` |
+| Attendance Storage | Daily CSV |
+| Computer Vision | OpenCV |
+| Data Processing | Pandas / NumPy |
+| Camera | Local Webcam |
+| UI | HTML / CSS / Jinja |
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+```bash
+git checkout -b feature/your-feature
+```
+
+Make your changes, then:
+
+```bash
+git add .
+git commit -m "Add your feature"
+git push origin feature/your-feature
+```
+
+Then open a Pull Request.
+
+---
+
+# 👨‍💻 Developer
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=1800&pause=700&color=38BDF8&center=true&vCenter=true&width=850&height=42&lines=BUILDING+%E2%80%A2+COMPETING+%E2%80%A2+RESEARCHING+%E2%80%A2+SHIPPING;AWARDS+%E2%80%A2+PATENTS+%E2%80%A2+IEEE+RESEARCH+%E2%80%A2+DSA" alt="Achievements animation"/>
+### Ajay Avale
+
+Information Technology Student & Software Developer
+
+<a href="https://github.com/avaleajay170">
+  <img src="https://img.shields.io/badge/GitHub-avaleajay170-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
 
 </div>
 
-🥇 Best Solution Award — Innovate You National Level Techathon 3.0 (2026)
+---
 
-🏆 Top 15 / 455+ teams with a ₹10,000 prize.
+# 📄 License
 
-🌟 Uplifter Award — Sumago Infotech Pvt. Ltd.
+A license is not currently specified in the repository.
 
-🧩 150+ DSA problems solved across LeetCode and GeeksforGeeks.
+For public open-source distribution, consider adding a license such as the MIT License in a `LICENSE` file.
 
-📚 2 patents and 2 IEEE papers, including 1 Scopus-indexed publication.
+---
 
-📜 Certifications
+# ⭐ Support
 
-🎓 The Git & GitHub Bootcamp — Udemy
+If you find the project useful, consider giving the repository a ⭐ on GitHub.
 
-🐳 Docker and Kubernetes: The Complete Guide — Udemy
+<p align="center">
 
-🎯 Current Engineering Focus
+<strong>Face Detection → Recognition → Attendance</strong>
 
-<div align="center">
+<br><br>
 
-╔══════════════════════════════════════════════════════════╗
-║                    CURRENT FOCUS                         ║
-╠══════════════════════════════════════════════════════════╣
-║  🤖 AI / ML       → Computer Vision & Deep Learning     ║
-║  🧠 Intelligence  → Practical AI Systems                ║
-║  🌐 Full Stack    → Scalable Web Applications           ║
-║  ⚙️ Engineering   → DSA + System Thinking              ║
-║  🚀 Projects      → Real-world Problem Solving          ║
-╚══════════════════════════════════════════════════════════╝
+Built with Python, OpenCV, Flask & scikit-learn 🚀
 
-</div>
-
-🧪 Engineering Philosophy
-
-<div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=2500&pause=900&color=38BDF8&center=true&vCenter=true&width=850&height=45&lines=Build+to+solve.;Learn+by+building.;Measure+what+matters.;Iterate+until+it+works.;Ship+better+than+yesterday." alt="Engineering philosophy animation" />
-
-</div>
-
-IDEA → PROTOTYPE → VALIDATE → ENGINEER → DEPLOY → MEASURE → ITERATE
-
-🤝 Let's Connect
-
-<div align="center">
-
-<a href="mailto:avaleajay95@gmail.com"><img src="https://img.shields.io/badge/EMAIL-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<a href="https://github.com/avaleajay170"><img src="https://img.shields.io/badge/GITHUB-Projects-111827?style=for-the-badge&logo=github&logoColor=white"/></a>
-<a href="https://leetcode.com/"><img src="https://img.shields.io/badge/LEETCODE-150%2B-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/></a>
-
-</div>
-
-<br/>
-
-<div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=17&duration=3000&pause=1000&color=0EA5E9&center=true&vCenter=true&width=750&height=40&lines=%3E+Thanks+for+visiting+my+profile!;%3E+Feel+free+to+explore+my+projects.;%3E+Let's+build+something+useful+%F0%9F%9A%80" alt="Animated closing message" />
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&animation=twinkling&color=0:020617,40:0f172a,70:075985,100:0ea5e9" width="100%"/>
-
-</div>
+</p>
